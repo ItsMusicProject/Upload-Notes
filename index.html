@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #ff758c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff5252;
+        }
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #ff5252;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="form-title">Login</h2>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="auth-btn">Login</button>
+        <p id="toggle-text">Don't have an account? <button class="toggle-btn" onclick="toggleForm()">Sign Up</button></p>
+    </div><script>
+    let isLogin = true;
+    function toggleForm() {
+        isLogin = !isLogin;
+        document.getElementById('form-title').innerText = isLogin ? 'Login' : 'Sign Up';
+        document.getElementById('auth-btn').innerText = isLogin ? 'Login' : 'Sign Up';
+        document.getElementById('toggle-text').innerHTML = isLogin ? "Don't have an account? <button class='toggle-btn' onclick='toggleForm()'>Sign Up</button>" : "Already have an account? <button class='toggle-btn' onclick='toggleForm()'>Login</button>";
+    }
+</script>
+
+</body>
+</html>
